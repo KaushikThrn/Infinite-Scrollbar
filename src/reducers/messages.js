@@ -1,13 +1,16 @@
-export default function messages(state = {}, action) {
+export default function messages(state = {messages:[],token:""},action) {
     switch (action.type) {
         case "GET_INITAL_DATA":
             return {
-                ...state
+                ...state,
+                messages:action.payload.messages,
+                token:action.payload.pageToken
             }
         case "ADD_MESSAGES":
             return {
                 ...state,
-                messages: state.messages.concat(action.messages)
+                messages: state.messages.concat(action.payload.messages),
+                token: action.payload.pageToken
             }
         default:
             return state
