@@ -1,23 +1,26 @@
 import React, {Component} from 'react';
 import {fetchMessages,fetchNextMessages} from '../actions/index.js';
 import {connect} from 'react-redux';
+import Header from './Header';
 
 class Blog extends Component {
+    state={messages:[]}
 
     componentDidMount(){
         this.props.dispatch(fetchMessages())
-        console.log(this.props.state)
+        this.setState({messages:this.props.messages})
     }
 
     addMessages=()=>{
         console.log("pressed");
         this.props.dispatch(fetchNextMessages(this.props.state.token))
+        this.setState({messages:this.props.messages})
     }
 
     render(){
         return(
             <div>
-                <h3>hello,this is a blog</h3>
+                <Header />
                 <button onClick={this.addMessages}>add more</button>
             </div>
             )
@@ -26,7 +29,7 @@ class Blog extends Component {
 
 function mapStateToProps(state){
     return {
-        state:state
+        messages:state.messages
     }
 }
   
