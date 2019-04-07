@@ -9,8 +9,8 @@ const Card=(props)=>{
                 <img src={`http://message-list.appspot.com/${author.photoUrl}`} alt="thumbnail" className="author-image" />
             </div>
             <div className="author-details">
-                <span>{author.name}</span>
-                <span>{updated}</span>
+                <span className="author-details__name">{author.name}</span>
+                <span className="author-details__updated">{updated}</span>
             </div>
         </div>
         <div className="message-content">{content}</div>

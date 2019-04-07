@@ -56,6 +56,14 @@
   margin-left: 10px;
 }
 
+.author-details__name{
+  font-weight: bold;
+}
+
+.author-details__updated{
+  font-size: 10px;
+}
+
 .message-content{
  margin: 15px;
 }
