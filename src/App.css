@@ -19,20 +19,36 @@
 
 .card-container{
   display:flex;
+  flex-direction: column;
+  width:500px;
+  margin-top:10px;
+  margin-bottom:15px;
+  border-width:1px;
+  border-radius:2px;
+  border-color: #ddd;
+  box-shadow:3px 3px 5px 6px #ccc;
+
 }
 
 .author-container{
   display:flex;
+  margin-top: 10px;
+  margin-left:10px;
 
 }
 
 .author-image{
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
 
 .author-details{
   display:flex;
   flex-direction: column;
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+.message-content{
+ margin: 15px;
 }

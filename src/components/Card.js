@@ -13,6 +13,7 @@ const Card=(props)=>{
                 <span>{updated}</span>
             </div>
         </div>
+        <div className="message-content">{content}</div>
     </div> 
     )
 }
