@@ -5,7 +5,7 @@ const MessageList=(props)=>{
     console.log(props)
     return(
         <div className="message-list">
-            {props.messages.map(message=>(<Card message={message} key={message.id}/>))}
+            {props.messages.map((message, index)=>(<Card message={message} key={index}/>))}
         </div>
     )
 }
