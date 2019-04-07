@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import messages from './messages'
+import blog from './blog'
 
 
 
 export default combineReducers({
-    messages
+    blog
 })

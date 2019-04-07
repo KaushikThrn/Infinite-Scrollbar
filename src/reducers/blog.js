@@ -1,4 +1,4 @@
-export default function messages(state = {messages:[],token:""},action) {
+export default function blog(state = {messages:[],token:""},action) {
     switch (action.type) {
         case "GET_INITAL_DATA":
             return {
