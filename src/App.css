@@ -10,7 +10,7 @@
   height: 50px;
   padding-top: 15px;
   box-shadow: #000;
-  position: 'relative';
+  position: fixed;
 }
 
 .header__title{
