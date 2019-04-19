@@ -4,13 +4,15 @@
 
 .header{
   display: flex;
-  background-color: #F8F8F8;
+  background-color: #6d1bbf;
+  color: white;
   justify-content: flex-start;
   align-items: center;
   height: 50px;
   padding-top: 15px;
   box-shadow: #000;
   position: fixed;
+  width:100%;
 }
 
 .header__title{
@@ -27,7 +29,7 @@
 .card-container{
   display:flex;
   flex-direction: column;
-  width:500px;
+  width:60%;
   margin-top:10px;
   margin-bottom:15px;
   border-width:1px;

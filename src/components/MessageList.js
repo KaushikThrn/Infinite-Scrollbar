@@ -16,7 +16,7 @@ class MessageList extends Component{
 
     onScroll=()=>{
         if (
-          (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500) &&
+          (window.innerHeight + window.scrollY) >= (3/4*(document.body.offsetHeight) ) &&
           this.props.messages.length && !this.state.loading
         ) {
           this.addMessages();
@@ -30,7 +30,6 @@ class MessageList extends Component{
 
     render(){
         const {messages}=this.props
-        console.log("length is",this.props)
         return(
             <div className="message-list">
                 {messages.map((message, index)=>(<Card message={message} key={index}/>))}
