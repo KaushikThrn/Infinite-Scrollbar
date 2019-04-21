@@ -62,7 +62,6 @@ class Card extends Component {
   onDragStart(clientX) {
     this.dragged = true;
     this.dragStartX = clientX;
-    this.listElement.className = `${this.listElement.className} ListItem`;
     this.startTime = Date.now();
     requestAnimationFrame(this.updatePosition);
   }
@@ -85,7 +84,8 @@ class Card extends Component {
 
       if (this.right > this.listElement.offsetWidth * threshold ) {
         this.right = this.listElement.offsetWidth * 2;
-        this.listElement.style.maxHeight = 0;
+        //this.listElement.style.maxHeight = 0;
+        this.listElement.className = `${this.listElement.className} removed-item`;
         this.props.swiped();
       } else {
         this.right = 0;

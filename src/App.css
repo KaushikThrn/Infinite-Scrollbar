@@ -13,6 +13,7 @@
   box-shadow: #000;
   position: fixed;
   width:100%;
+  z-index:1;
 }
 
 .header__title{
@@ -24,6 +25,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position:relative;
+  top: 60px;
+  transition: height 500ms 0ms;
 }
 
 .card-container{
@@ -68,6 +72,10 @@
 
 .message-content{
  margin: 15px;
+}
+
+.removed-item{
+  max-height:0;
 }
 
 .bouncing-item{
