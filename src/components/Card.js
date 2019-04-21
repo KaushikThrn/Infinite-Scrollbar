@@ -85,15 +85,13 @@ class Card extends Component {
 
       if (this.right > this.listElement.offsetWidth * threshold ) {
         this.right = this.listElement.offsetWidth * 2;
-        //this.listElement.style.display = 'none';
+        this.listElement.style.maxHeight = 0;
         this.props.swiped();
       } else {
         this.right = 0;
+        this.listElement.className = `${this.listElement.className} BouncingListItem`;
         this.listElement.style.transform = `translateX(${this.right}px)`;
       }
-
-      /* this.listElement.className = `${this.listElement.className} BouncingListItem`;
-      this.listElement.style.transform = `translateX(${this.left}px)`; */
     }
   }
 

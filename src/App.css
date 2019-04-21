@@ -69,3 +69,7 @@
 .message-content{
  margin: 15px;
 }
+
+.bouncing-item{
+  transition: transform 2s ease-out;
+}
