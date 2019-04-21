@@ -39,7 +39,7 @@ class Card extends Component {
   }
 
   componentDidUpdate() {
-    this.left=0;
+    this.right=0;
     this.listElement.style="";
   }
 
@@ -83,13 +83,13 @@ class Card extends Component {
 
       const threshold = 0.3;
 
-      if (this.left < this.listElement.offsetWidth * threshold * -1) {
-        this.left = -this.listElement.offsetWidth * 2;
+      if (this.right > this.listElement.offsetWidth * threshold ) {
+        this.right = this.listElement.offsetWidth * 2;
         //this.listElement.style.display = 'none';
         this.props.swiped();
       } else {
-        this.left = 0;
-        this.listElement.style.transform = `translateX(${this.left}px)`;
+        this.right = 0;
+        this.listElement.style.transform = `translateX(${this.right}px)`;
       }
 
       /* this.listElement.className = `${this.listElement.className} BouncingListItem`;
@@ -98,17 +98,17 @@ class Card extends Component {
   }
 
   onMouseMove(evt) {
-    const left = evt.clientX - this.dragStartX;
-    if (left < 0) {
-      this.left = left;
+    const right = evt.clientX - this.dragStartX;
+    if (right > 0) {
+      this.right = right;
     }
   }
 
   onTouchMove(evt) {
     const touch = evt.targetTouches[0];
-    const left = touch.clientX - this.dragStartX;
-    if (left < 0) {
-      this.left = left;
+    const right = touch.clientX - this.dragStartX;
+    if (right > 0) {
+      this.right = right;
     }
   }
 
@@ -119,7 +119,7 @@ class Card extends Component {
     const elapsed = now - this.startTime;
 
     if (this.dragged && elapsed > this.fpsInterval) {
-        this.listElement.style.transform = `translateX(${this.left}px)`;
+        this.listElement.style.transform = `translateX(${this.right}px)`;
 
     }
   }
