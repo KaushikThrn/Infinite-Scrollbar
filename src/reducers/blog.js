@@ -25,6 +25,12 @@ export default function blog(state = {messages:[],token:""},action) {
                 messages: state.messages.concat(action.payload.messages),
                 token: action.payload.pageToken
             }
+        case "DELETE_MESSAGE":
+            console.log("action",action)
+            return {
+                ...state,
+                messages: state.messages.filter((message)=>{return message.id!== action.payload.id })
+            }
         default:
             return state
     }

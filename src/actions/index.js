@@ -23,6 +23,13 @@ export const fetchMessages=()=>{
     }
 }
 
+export const deleteMessage=(message)=>{
+    return {
+        type:"DELETE_MESSAGE",
+        payload:message
+    }
+}
+
 export const fetchNextMessages=(token)=>{
     return (dispatch)=>{
         axios.get(`http://message-list.appspot.com/messages?${token}`).then((response)=>{
