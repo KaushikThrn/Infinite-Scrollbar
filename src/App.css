@@ -27,7 +27,6 @@
   align-items: center;
   position:relative;
   top: 60px;
-  transition: height 500ms 0ms;
 }
 
 .card-container{
@@ -56,6 +55,7 @@
   border-radius: 50%;
 }
 
+
 .author-details{
   display:flex;
   flex-direction: column;
@@ -74,10 +74,14 @@
  margin: 15px;
 }
 
-.removed-item{
-  max-height:0;
+.list-item-exit{
+  max-height:500px;
+  opacity: 1;
 }
 
-.bouncing-item{
-  transition: transform 2s ease-out;
+.list-item-exit-active{
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 5s;
 }

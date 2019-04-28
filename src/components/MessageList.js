@@ -2,6 +2,11 @@ import React,{Component} from 'react';
 import Card from './Card';
 import {fetchMessages,fetchNextMessages,deleteMessage} from '../actions/index.js';
 import {connect} from 'react-redux';
+import {
+    CSSTransition,
+    TransitionGroup,
+  } from 'react-transition-group';
+
 
 class MessageList extends Component{
     
@@ -25,6 +30,7 @@ class MessageList extends Component{
       }
 
     handleDelete=(message)=>{
+        console.log("deleted");
         this.props.dispatch(deleteMessage(message))
       }
 
@@ -47,11 +53,17 @@ class MessageList extends Component{
     render(){
         const {messages}=this.props
         return(
-            <div className="message-list">
-                {messages.map((message, index)=>(<Card swiped={()=>(this.handleDelete(message))} message={message} key={index}/>))}
-            </div>
-        )
-    }
+            <TransitionGroup className="message-list">
+                {messages.map((message, index) => (
+                <CSSTransition
+                    key={index}
+                    timeout={5000}
+                    classNames="list-item"
+                >
+                <Card swiped={()=>(this.handleDelete(message))} message={message} key={index}/>
+                </CSSTransition>))}
+              </TransitionGroup> )
+}
 }
 
 function mapStateToProps(state){

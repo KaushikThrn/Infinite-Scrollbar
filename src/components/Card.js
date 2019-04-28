@@ -40,7 +40,8 @@ class Card extends Component {
 
   componentDidUpdate() {
     this.right=0;
-    this.listElement.style="";
+    this.listElement.style = ``;
+    this.listElement.className = `card-container`;
   }
 
   componentWillUnmount() {
@@ -85,11 +86,11 @@ class Card extends Component {
       if (this.right > this.listElement.offsetWidth * threshold ) {
         this.right = this.listElement.offsetWidth * 2;
         //this.listElement.style.maxHeight = 0;
-        this.listElement.className = `${this.listElement.className} removed-item`;
+        this.listElement.className = `${this.listElement.className}`;
         this.props.swiped();
       } else {
         this.right = 0;
-        this.listElement.className = `${this.listElement.className} BouncingListItem`;
+        this.listElement.className = `${this.listElement.className}`;
         this.listElement.style.transform = `translateX(${this.right}px)`;
       }
     }
@@ -128,7 +129,9 @@ class Card extends Component {
         return (
             <div className="card-container"  ref={div => (this.listElement = div)}
             onMouseDown={this.onDragStartMouse}
-            onTouchStart={this.onDragStartTouch}>
+            onTouchStart={this.onDragStartTouch}
+            onClick={this.props.swiped}
+            >
             <div className="author-container">
                 <div className="image-container">
                     <img src={`http://message-list.appspot.com/${author.photoUrl}`} alt="thumbnail" className="author-image" />
